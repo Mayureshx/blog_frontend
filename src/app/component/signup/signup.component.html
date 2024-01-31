@@ -1,0 +1,97 @@
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%);
+  background-image: url('https://img.freepik.com/free-photo/diverse-people-using-their-phones_53876-95104.jpg?size=626&ext=jpg&ga=GA1.1.2030702338.1684058929&semt=sph'); background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;">
+    <div class="container" >
+      <div class="row gx-lg-5 align-items-center">
+       
+        
+
+        <div class="col-lg-6 mb-5 mb-lg-0 ">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <h3>Sign up</h3><br>
+              <form #signup="ngForm" (ngSubmit)="signupUser(signup)" novalidate>
+               
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Enter your username"  required minlength="3" maxlength="20"   ngModel >
+                    <label class="form-label" class="text-danger" *ngIf="signup.controls['username']?.invalid && signup.controls['username'].dirty">
+                      Username is required. (length 3 to 20 characters )
+                    </label>
+
+                
+                  </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  ngModel>
+                  <label class="form-label"  class="text-danger" *ngIf="signup.controls['email']?.invalid && signup.controls['email'].dirty">
+                    Email is required.(Invalid)
+                  </label>
+                </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input class="form-control" type="date" id="dob" name="dob"   required ngModel>
+                    <label class="form-label" class="text-danger" *ngIf="signup.controls['dob']?.invalid && signup.controls['dob'].dirty">
+                      dob is required
+                    </label>  </div>
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Set Password" required ngModel minlength="8">
+                        <label class="form-label" class="text-danger" *ngIf="signup.controls['password']?.invalid && signup.controls['password'].dirty">
+                          Password is required.(minimum 8 characters)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input class="form-control" type="password" id="password_confirm" name="password_confirm" placeholder="Retype Password"  required ngModel minlength="8">
+          <label class="form-label" class="text-danger" *ngIf="signup.controls['password_confirm']?.invalid && signup.controls['password_confirm'].dirty">
+           Password is required.(minimum 8 characters)
+                      </label>
+                    </div>
+                    </div>
+                  </div>
+              
+
+                <!-- Submit button -->
+                <button type="submit" [disabled]="signup.invalid" class="btn btn-primary btn-block mb-4">
+                  Sign up
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center">
+                  <p>or sign up with:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>

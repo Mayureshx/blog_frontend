@@ -1,0 +1,30 @@
+<div class="container">
+    <br>
+  
+  <button class="btn btn-primary float-end ">Logout</button>
+<div class="jumbotron">
+  <h1 class="display-4">Manage Post</h1>
+   <p class="lead">
+    <a class="btn btn-primary btn-sm" href="/manage-posts" role="button">Manage Posts</a>&nbsp;
+    <a class="btn btn-primary btn-sm" href="/manage-comments" role="button">Manage Comments</a>&nbsp;
+    <a class="btn btn-primary btn-sm" href="/manage-users" role="button" *ngIf="userRole=='ADMIN'">Manage Users</a>&nbsp;
+  </p>
+</div>
+<br><br>
+
+<h3>Add New Post Category</h3>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Category Name</label>
+    <input type="text" class="form-control" id="category" placeholder="Enter category title" required #category name="category">
+  </div>  
+ 
+<div class="mb-3">
+    
+    <button type="Submit" class="btn btn-primary" (click)="addCategory(category.value)">Add New Category</button>&nbsp;
+    <button type="Reset" class="btn btn-secondary">Reset</button>
+  </div>
+<br><br><br>
+</div>
+
+
